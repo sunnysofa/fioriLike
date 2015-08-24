@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m, sap.ui.commons, sap.ui.table, sap.ui.layout"
+				data-sap-ui-xx-bindingsyntax="complex"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+				sap.ui.localResources("fiorilike");
+				
+				
+				//restore if splitcontain doesn't work
+				var app = new sap.m.App("myApp",{initialPage:"mainPage"});
+				
+				//var app = new sap.m.SplitApp("splitApp", {mode: sap.m.SplitAppmode.ShowHideMode});
+				//var lists = sap.ui.view({id:"lists", viewName:"fiorilike.testList", type:sap.ui.core.mvc.ViewType.JS}))
+				//app.addMasterPage(lists);
+				
+				
+				
+				//"home page"
+				var page1view = new sap.ui.view({id:"idfioriLike1", 
+										viewName:"fiorilike.fioriLike",
+										type:sap.ui.core.mvc.ViewType.JS});
+
+				//orders view
+				var orderPage = new sap.ui.view({id:"viewOrders", 
+										viewName:"fiorilike.viewOrders", 
+										type:sap.ui.core.mvc.ViewType.JS});
+				var customerPage = new sap.ui.view({id:"viewCustomers", 
+					viewName:"fiorilike.viewCustomers", 
+					type:sap.ui.core.mvc.ViewType.JS});
+				
+				var employeePage = new sap.ui.view({id:"viewEmployees", 
+					viewName:"fiorilike.viewEmployees", 
+					type:sap.ui.core.mvc.ViewType.JS});
+				
+				var productPage = new sap.ui.view({id:"viewProducts", 
+					viewName:"fiorilike.viewProducts", 
+					type:sap.ui.core.mvc.ViewType.JS});
+				
+				var supplierPage = new sap.ui.view({id:"viewSuppliers", 
+					viewName:"fiorilike.viewSuppliers", 
+					type:sap.ui.core.mvc.ViewType.JS});
+				
+				app.addPage(page1view);
+				app.addPage(orderPage).addPage(customerPage).addPage(employeePage).addPage(productPage).addPage(supplierPage);
+				//app.addDetailPage(orderPage);
+				
+				app.placeAt("content");
+				
+				</script>
+		
+		<style type="text/css">
+		.tables{
+			background-color: lightblue;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 8px;	
+			padding: 3px;
+			float: right;
+		}
+		.lists{
+			float: left;
+			left: 0px;	
+			padding: 3px; 
+		}
+	
+		</style>
+		
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+		<div id="content2"></div>
+	</body>
+</html>
